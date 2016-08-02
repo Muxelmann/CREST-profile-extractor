@@ -21,6 +21,9 @@ for profile_count = 0:99
     resident_count = randperm(5, 1);
     ExcelApp.Range('main!$K$4').Value = resident_count;
     
+    % Allocates appliances to this dwelling only once
+    ExcelApp.Run('Sheet1.btnAllocateAppliances_Click');
+        
     annual_load_profile = zeros(1440 * 365, 1);
     annual_irradiance_profile = zeros(1440 * 365, 1);
     
@@ -41,8 +44,6 @@ for profile_count = 0:99
         % Set the current month
         ExcelApp.Range('main!$K$6').Value = month(d);
         
-        % Allocates appliances to the dwelling
-        ExcelApp.Run('Sheet1.btnAllocateAppliances_Click');
         % Runs the occupancy simulation
         ExcelApp.Run('Sheet1.btnRunOccupancy_Click');
         % Runs the electricity demand model
