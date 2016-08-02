@@ -15,6 +15,10 @@ The output is a series (100 at the time of writing this) of MATLAB files that ea
 - Annual solar irradiance profile in 1 minute resolution (kW / m^2)
 - Number of residents in the household
 
+## Sample image
+
+![Sample profile for a random day](https://raw.githubusercontent.com/Muxelmann/CREST-profile-extractor/master/supporting/sample-profile.jpg)
+
 ## TODO
 
 - Nothing really...
