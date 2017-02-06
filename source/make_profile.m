@@ -11,7 +11,12 @@ dayCount = length(startDate:endDate);
 for profile_count = 0:99
     
     % Connect to excel application
-    ExcelApp = actxserver('Excel.Application');
+    try
+        ExcelApp = actxGetRunningServer('Excel.Application');
+    catch
+        disp('Please make sure Excel is opened');
+        return
+    end
     % Makes window visible
     ExcelApp.Visible = 1;
     % Opens workbook
